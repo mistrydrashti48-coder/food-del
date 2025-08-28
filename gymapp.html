@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IronFlex Gym</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif;}
+    body {background: #0f172a; color: white; line-height: 1.6;}
+
+    /* Navbar */
+    header {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: rgba(0,0,0,0.85); display: flex; justify-content: space-between;
+      align-items: center; padding: 20px 50px; z-index: 1000;
+    }
+    header h1 {color: #facc15; font-size: 1.8rem; font-weight: bold;}
+    nav a {color: #fff; margin: 0 15px; text-decoration: none; font-weight: 600;}
+    nav a:hover {color: #38bdf8;}
+    .menu-btn {display: none; cursor: pointer; font-size: 1.8rem; color: white;}
+
+    /* Hero Section */
+    .hero {
+      height: 100vh; background: url('https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 0 20px; color: white;
+    }
+    .hero h2 {font-size: 3rem; margin-bottom: 15px; text-shadow: 2px 2px 8px black; color: #facc15;}
+    .hero p {font-size: 1.2rem; max-width: 700px; text-shadow: 1px 1px 6px black;}
+
+    /* Section Styling */
+    section {padding: 80px 40px; text-align: center;}
+    section h2 {font-size: 2.4rem; margin-bottom: 30px; color: #facc15;}
+
+    /* Features */
+    .features {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;}
+    .feature {background: #1e293b; padding: 20px; border-radius: 15px; box-shadow: 0 6px 15px rgba(0,0,0,0.6);}
+    .feature img {width: 100%; border-radius: 10px; margin-bottom: 15px;}
+    .feature h3 {margin-bottom: 10px; color: #38bdf8; font-weight: bold;}
+    .feature p {color: #ddd;}
+
+    /* Gallery */
+    .gallery {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;}
+    .gallery img {width: 100%; border-radius: 10px; transition: transform 0.3s;}
+    .gallery img:hover {transform: scale(1.05);}
+
+    /* Pricing */
+    .pricing {display: flex; flex-wrap: wrap; justify-content: center; gap: 25px;}
+    .plan {background: #1e293b; padding: 25px; border-radius: 15px; width: 280px; box-shadow: 0 6px 15px rgba(0,0,0,0.6);}
+    .plan h3 {margin-bottom: 15px; color: #facc15; font-weight: bold;}
+    .plan p {margin-bottom: 10px;}
+    .plan button {background: #38bdf8; border: none; padding: 10px 20px; border-radius: 8px; color: white; font-weight: bold; cursor: pointer;}
+    .plan button:hover {background: #0ea5e9;}
+
+    /* Contact */
+    form {max-width: 600px; margin: auto; display: flex; flex-direction: column;}
+    input, textarea {margin: 10px 0; padding: 12px; border-radius: 8px; border: none; outline: none;}
+    button.submit {background: #facc15; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;}
+    button.submit:hover {background: #eab308;}
+
+    /* Footer */
+    footer {text-align: center; padding: 20px; background: #0f172a; color: #aaa; margin-top: 20px;}
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {display: none; flex-direction: column; background: #0f172a; position: absolute; top: 60px; right: 0; width: 200px; padding: 20px;}
+      nav.active {display: flex;}
+      .menu-btn {display: block;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <h1>IronFlex Gym</h1>
+    <div class="menu-btn">☰</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <h2>💪 Welcome to <span style="color:#38bdf8; font-weight:bold;">IronFlex Gym</span></h2>
+    <p>Push your <b style="color:#facc15;">limits</b>, transform your <b style="color:#38bdf8;">body</b>, and achieve your <b style="color:#f87171;">goals</b> with our modern fitness training programs.</p>
+  </section>
+
+  <!-- About -->
+  <section id="about" aria-labelledby="about-heading" style="padding:40px 20px; background:linear-gradient(180deg,#0f172a 0%, #071133 100%); color:#e6eef8;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div class="about-header" style="display:flex; align-items:center; gap:16px; margin-bottom:18px; flex-wrap:wrap;">
+        <h2 id="about-heading" style="font-size:28px; display:flex; align-items:center; gap:8px;">🏋️ About Us</h2>
+        <p style="opacity:0.9; margin:0;">Welcome to <strong style="color:#38bdf8;">IronFlex Gym</strong> — where science-backed training meets community support. We help all fitness levels reach sustainable results with safe, effective programs.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 360px; gap:24px; align-items:start;">
+        <!-- Left column -->
+        <div>
+          <p>At <strong style="color:#38bdf8;">IronFlex Gym</strong>, we provide <strong style="color:#facc15;">world-class equipment</strong>, <strong style="color:#f87171;">certified trainers</strong>, and <strong style="color:#34d399;">personalized fitness plans</strong> to help you stay strong and healthy.</p>
+
+          <ul style="list-style:none; padding:0; margin:18px 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px;">
+            <li style="background:rgba(255,255,255,0.03); padding:12px; border-radius:12px;">✅ Customized programming</li>
+            <li style="background:rgba(255,255,255,0.03); padding:12px; border-radius:12px;">✅ Group classes</li>
+            <li style="background:rgba(255,255,255,0.03); padding:12px; border-radius:12px;">✅ Nutrition guidance</li>
+            <li style="background:rgba(255,255,255,0.03); padding:12px; border-radius:12px;">✅ Recovery area</li>
+          </ul>
+
+          <div style="display:flex; gap:12px; margin-bottom:18px; flex-wrap:wrap;">
+            <div style="background:linear-gradient(90deg,#06b6d4,#7c3aed); padding:16px; border-radius:12px; min-width:120px; text-align:center;">
+              <div style="font-size:20px; font-weight:700;">150+</div>
+              <div style="font-size:12px; opacity:0.85;">Active Members</div>
+            </div>
+            <div style="background:linear-gradient(90deg,#f97316,#ef4444); padding:16px; border-radius:12px; min-width:120px; text-align:center;">
+              <div style="font-size:20px; font-weight:700;">25</div>
+              <div style="font-size:12px; opacity:0.85;">Certified Trainers</div>
+            </div>
+            <div style="background:linear-gradient(90deg,#10b981,#34d399); padding:16px; border-radius:12px; min-width:120px; text-align:center;">
+              <div style="font-size:20px; font-weight:700;">1200+</div>
+              <div style="font-size:12px; opacity:0.85;">Classes / month</div>
+            </div>
+          </div>
+
+          <a href="#membership" style="display:inline-block; text-decoration:none; padding:12px 18px; background:#38bdf8; color:#07203b; border-radius:10px; font-weight:600;">Join a free trial session →</a>
+        </div>
+
+        <!-- Right column: trainers -->
+        <aside aria-label="Our Trainers" style="background:rgba(255,255,255,0.03); padding:14px; border-radius:12px;">
+          <h3 style="margin-top:0; margin-bottom:10px; font-size:18px;">Meet our trainers</h3>
+          <div style="display:grid; gap:10px;">
+            <div style="display:flex; gap:12px; align-items:center;">
+              <img src="https://via.placeholder.com/68" alt="Trainer: Asha Patel" width="68" height="68" style="border-radius:12px; object-fit:cover;">
+              <div>
+                <div style="font-weight:700;">Asha Patel</div>
+                <div style="font-size:13px; opacity:0.85;">Strength Coach</div>
+              </div>
+            </div>
+            <div style="display:flex; gap:12px; align-items:center;">
+              <img src="https://via.placeholder.com/68" alt="Trainer: Rohan Mehta" width="68" height="68" style="border-radius:12px; object-fit:cover;">
+              <div>
+                <div style="font-weight:700;">Rohan Mehta</div>
+                <div style="font-size:13px; opacity:0.85;">Mobility Coach</div>
+              </div>
+            </div>
+            <div style="display:flex; gap:12px; align-items:center;">
+              <img src="https://via.placeholder.com/68" alt="Trainer: Emily Fox" width="68" height="68" style="border-radius:12px; object-fit:cover;">
+              <div>
+                <div style="font-weight:700;">Emily Fox</div>
+                <div style="font-size:13px; opacity:0.85;">Yoga Specialist</div>
+              </div>
+            </div>
+            <a href="#trainers" style="margin-top:6px; display:inline-block; font-size:13px; color:#cbd5e1;">View full trainer profiles →</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <h2>🔥 Gym Features</h2>
+    <div class="features">
+      <div class="feature">
+        <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?auto=format&fit=crop&w=600&q=80" alt="Machines">
+        <h3>Modern Machines</h3>
+        <p>State-of-the-art equipment for strength, cardio, and endurance.</p>
+      </div>
+      <div class="feature">
+        <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=600&q=80" alt="Trainer">
+        <h3>Expert Trainers</h3>
+        <p>Work with <b style="color:#f87171;">certified trainers</b> who motivate you at every step.</p>
+      </div>
+      <div class="feature">
+        <img src="https://images.unsplash.com/photo-1543353071-10c8ba85a904?auto=format&fit=crop&w=600&q=80" alt="Nutrition">
+        <h3>Nutrition Plans</h3>
+        <p>Personalized <b style="color:#facc15;">diet & meal plans</b> designed by experts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>📸 Gallery</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&q=80" alt="Gym">
+      <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=800&q=80" alt="Weights">
+      <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?auto=format&fit=crop&w=800&q=80" alt="Workout">
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing">
+    <h2>💳 Pricing Plans</h2>
+    <div class="pricing">
+      <div class="plan">
+        <h3>Basic</h3>
+        <p>Access to equipment</p>
+        <p>1 Trainer Consultation</p>
+        <p><b style="color:#38bdf8;">₹999/month</b></p>
+        <button>Join Now</button>
+      </div>
+      <div class="plan">
+        <h3>Standard</h3>
+        <p>Everything in Basic</p>
+        <p>+ Yoga & Wellness</p>
+        <p>+ 3 Trainer Sessions</p>
+        <p><b style="color:#facc15;">₹1999/month</b></p>
+        <button>Join Now</button>
+      </div>
+      <div class="plan">
+        <h3>Premium</h3>
+        <p>All Features</p>
+        <p>+ Unlimited Trainer Access</p>
+        <p>+ Custom Nutrition Plan</p>
+        <p><b style="color:#f87171;">₹2999/month</b></p>
+        <button>Join Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>📩 Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 <b style="color:#38bdf8;">IronFlex Gym</b> | Built with 💪 Passion</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const menuBtn = document.querySelector(".menu-btn");
+    const nav = document.querySelector("nav");
+    menuBtn.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>
